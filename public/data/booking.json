@@ -1,0 +1,66 @@
+{
+  "guest": {
+    "firstName": "Lucia"
+  },
+  "hotel": {
+    "name": "Maison Soleil",
+    "address": "12 Rue des Oliviers · Cassis",
+    "established": 1987,
+    "calendarLocation": "Maison Soleil, 12 Rue des Oliviers, Cassis, France"
+  },
+  "booking": {
+    "status": "Confirmed",
+    "receiptNumber": "MS-2026",
+    "receiptCode": "0421-AH",
+    "room": "La Garrigue",
+    "nights": 4,
+    "checkIn": {
+      "isoDate": "2026-04-25",
+      "displayDate": "25 Apr",
+      "dayLabel": "Saturday",
+      "time": "15:00",
+      "fullLabel": "Sat, 25 April"
+    },
+    "checkOut": {
+      "isoDate": "2026-04-29",
+      "displayDate": "29 Apr",
+      "dayLabel": "Wednesday",
+      "time": "11:00"
+    },
+    "lineItems": [
+      { "label": "Room · La Garrigue · 4 nights", "amount": 620.0 },
+      { "label": "Breakfast · 2 guests", "amount": 96.0 },
+      { "label": "Tourist tax", "amount": 14.4 }
+    ],
+    "total": 730.4,
+    "currency": "EUR",
+    "paymentMethod": "Wise",
+    "paymentCurrency": "GBP"
+  },
+  "host": {
+    "name": "Margaux",
+    "message": "We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat — Poivre — pretending not to notice you."
+  },
+  "arrival": {
+    "checkInFrom": "15:00",
+    "dateLabel": "Sat, 25 April",
+    "instructions": "Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree."
+  },
+  "wifi": {
+    "network": "Le Soleil · Guest",
+    "password": "soleil-2026"
+  },
+  "breakfast": {
+    "hours": "8 – 10:30",
+    "location": "On the terrace",
+    "description": "Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before."
+  },
+  "weather": {
+    "location": "Cassis",
+    "temperature": 27,
+    "condition": "Sunny · light breeze"
+  },
+  "navigation": {
+    "badgeCount": 1
+  }
+}

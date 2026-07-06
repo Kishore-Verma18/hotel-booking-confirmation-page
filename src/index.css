@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-neutral-900: hsl(33 15% 15%);
+  --color-neutral-800: hsl(33 22% 20%);
+  --color-neutral-700: hsl(32 20% 29%);
+  --color-neutral-600: hsl(33 17% 41%);
+  --color-neutral-400: hsl(36 22% 86%);
+  --color-neutral-200: hsl(30 24% 93%);
+  --color-neutral-100: hsl(35 60% 96%);
+  --color-neutral-50: hsl(40 60% 98%);
+  --color-neutral-0: hsl(0 0% 100%);
+
+  --color-sun-500: hsl(42 83% 58%);
+  --color-sun-300: hsl(44 84% 75%);
+  --color-sun-200: hsl(45 100% 74%);
+  --color-sun-50: hsl(41 100% 93%);
+
+  --color-terracotta-700: hsl(15 69% 37%);
+  --color-terracotta-600: hsl(15 74% 41%);
+  --color-terracotta-500: hsl(18 62% 47%);
+  --color-terracotta-400: hsl(22 72% 56%);
+
+  --color-blue-500: hsl(230 49% 56%);
+  --color-rose-500: hsl(340 48% 52%);
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+}
+
+.dark {
+  --color-neutral-900: hsl(35 45% 93%);
+  --color-neutral-800: hsl(36 20% 82%);
+  --color-neutral-700: hsl(33 15% 72%);
+  --color-neutral-600: hsl(33 12% 58%);
+  --color-neutral-400: hsl(33 14% 32%);
+  --color-neutral-200: hsl(33 16% 22%);
+  --color-neutral-100: hsl(33 18% 16%);
+  --color-neutral-50: hsl(33 15% 11%);
+  --color-neutral-0: hsl(33 18% 19%);
+}
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-neutral-900);
+    background-color: var(--color-neutral-50);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-terracotta-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-offset-neutral-50;
+  }
+}
+
+.sidebar-scene {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.sidebar-panel {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+@media (max-width: 767px) {
+
+  .sidebar-panel--light,
+  .sidebar-panel--dark {
+    transform: none;
+  }
+
+  .sidebar-panel--dark {
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar-scene {
+    perspective-origin: left center;
+  }
+}
+
+.receipt-paper {
+  background: hsl(0 0% 100%);
+  color: hsl(33 15% 15%);
+}
+
+.receipt-paper .text-neutral-900,
+.receipt-paper .font-serif,
+.receipt-paper .font-mono {
+  color: hsl(33 15% 15%);
+}
+
+.receipt-paper .text-neutral-700,
+.receipt-paper .text-neutral-600 {
+  color: hsl(33 17% 41%);
+}
+
+.receipt-paper .border-neutral-200 {
+  border-color: hsl(30 24% 93%);
+}
+
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    background: white;
+    color: hsl(33 15% 15%);
+  }
+
+  main {
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .booking-cards-group {
+    min-height: auto !important;
+    display: block !important;
+  }
+
+  .welcome-card {
+    display: none !important;
+  }
+
+  .receipt-card {
+    position: static !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid hsl(30 24% 93%);
+    border-radius: 0.75rem;
+    page-break-inside: avoid;
+    background: white !important;
+    color: hsl(33 15% 15%) !important;
+  }
+}
