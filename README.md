@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frontend Mentor - Hotel booking confirmation page
 
 ![Design preview for the Hotel booking confirmation page coding challenge](./preview.jpg)
@@ -111,3 +112,7 @@ We love receiving feedback! We're always looking to improve our challenges and o
 **This challenge is completely free. Please share it with anyone who will find it useful for practice.**
 
 **Have fun building!** 🚀
+=======
+# hotel-booking-confirmation-page
+Completed the frontendmentor.io/ challenge of hotel-booking-confirmation-page.
+>>>>>>> 205764f29e439c51e98d17b5021c7be6ec87d13a
